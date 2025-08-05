@@ -7,4 +7,4 @@ data:
   value_form_values: {{ .Values.fruit }}
   value_form_chart: {{ .Chart.Name }}
   value_form_subchart: {{ .Subcharts.sample.Values.fruit }}
-  files: (.Files.Get new.txt)
+  files: ( .Files.Get new.txt )
