@@ -10,6 +10,7 @@ data:
   files: {{ .Files.Get "files/new.txt" }}
   files1: {{ .Files.Glob "files/*.txt" }}
   version: {{ .Capabilities.KubeVersion.Major }}
+  file_name: {{ .Template.Name }}
 ---
 apiVersion: v1
 kind: ConfigMap
