@@ -15,4 +15,4 @@ kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-configmap-1
 data:
- {{ (.Files.Globe "files/*").AsConfig | indent 2 }}
+{{ (.Files.Globe "files/*").AsConfig | indent 2 }}
