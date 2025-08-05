@@ -6,3 +6,4 @@ data:
   myvalue: "Hello World"
   value_form_values: {{ .Values.fruit }}
   value_form_chart: {{ .Chart.Name }}
+  value_form_subchart: {{ .Subcharts.sample.fruit }}
