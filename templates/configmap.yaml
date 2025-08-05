@@ -8,4 +8,5 @@ data:
   food: {{ .Values.favorite.food | upper | quote }}
   book: {{ .Values.favorite.book | repeat 5 | upper | quote }}
   drink1: {{ .Values.favorite.drink1 | default "tea" }}
-  anno: {{ (lookup "v1" "Namespace" "" "") }}
+  anno: |
+   {{ (lookup "v1" "Namespace" "" "") }}
