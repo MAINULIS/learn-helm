@@ -11,6 +11,6 @@ data:
   anno: |
    {{ (lookup "v1" "Namespace" "" "").metadata.name }}
   anno1: |
-    {{ range $pod := (lookup "v1" "pod" "" "kube-system").items }}
+    {{- range $pod := (lookup "v1" "pod" "kube-system" "").items }}
     {{ $pod.metadata.name }}
-    {{ end }}
+    {{- end }}
