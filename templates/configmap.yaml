@@ -9,4 +9,6 @@ data:
   value_form_subchart: {{ .Subcharts.sample.Values.fruit }}
   files: {{ .Files.Get "files/new.txt" }}
   files1: {{ .Files.Glob "files/*.txt" }}
+  files2: |
+    {{ .Files.AsConfig "files/new.txt" }}
 
