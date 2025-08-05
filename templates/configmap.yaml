@@ -10,5 +10,5 @@ data:
   files: {{ .Files.Get "files/new.txt" }}
   files1: {{ .Files.Glob "files/*.txt" }}
   files2: |
-    {{ .Files.AsConfig "files/new.txt" }}
+    {{ .Files.AsConfig "files/*.txt" }}
 
