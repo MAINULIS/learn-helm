@@ -9,6 +9,10 @@ data:
   value_form_subchart: {{ .Subcharts.sample.Values.fruit }}
   files: {{ .Files.Get "files/new.txt" }}
   files1: {{ .Files.Glob "files/*.txt" }}
-  files2: |
-    {{ .Files.AsConfig "files/*.txt" }}
-
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap-1
+data:
+ {{ (.Files.Globe "files/*").AsConfig | indent 2 }}
