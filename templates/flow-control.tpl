@@ -42,3 +42,16 @@ data:
     {{- range .Values.pizzaToppings }}
     - {{ . | title | quote }}
     {{- end }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap-3
+data:
+  myvalue: "Hello World"
+  {{- $relname := .Release.Name -}} ## here we are declaring variable
+  {{- with .Values.favorite }}
+  drink: {{ .drink | default "tea" | quote }}
+  food: {{ .food | upper | quote }}
+  release: {{ $relname }}
+  {{- end }}
