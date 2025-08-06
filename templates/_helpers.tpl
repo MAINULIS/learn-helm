@@ -7,7 +7,7 @@
     version: {{ .Chart.Version }}
 {{- end }}
 
-// With no indentation
+// With no indentation. Include should be used.
 {{- define "mychart.app" -}}
 app_name: {{ .Chart.Name }}
 app_version: "{{ .Chart.Version }}"
