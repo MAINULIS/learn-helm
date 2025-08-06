@@ -1,8 +1,15 @@
+{{- define "mychart.labels" }}
+  labels:
+    generator: helm
+    date: {{ now | htmlDate }}
+{{- end }}
+
 {{- if .Values.configmap.enabled }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-configmap
+  {{- template "mychart.labels" }}
 data:
   myvalue: "Hello World"
 {{- end }}
@@ -11,6 +18,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-configmap-1
+  {{- template "mychart.labels" }}
 data:
   myvalue: "Hello World"
   drink: {{ .Values.favorite.drink | default "tea" | quote }}
