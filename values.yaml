@@ -3,3 +3,6 @@ favorite:
   drink: coffee
   food: pizza
   book: quran
+
+configmap:
+  enabled: false
