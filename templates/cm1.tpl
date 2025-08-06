@@ -6,3 +6,4 @@ metadata:
   {{- template "mychart.labels" }}
 data:
   myvalue: "Hello World"
+{{- end }}
