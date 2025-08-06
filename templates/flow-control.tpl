@@ -1,9 +1,3 @@
-{{- define "mychart.labels" }}
-  labels:
-    generator: helm
-    date: {{ now | htmlDate }}
-{{- end }}
-
 {{- if .Values.configmap.enabled }}
 apiVersion: v1
 kind: ConfigMap
