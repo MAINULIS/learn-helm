@@ -19,3 +19,15 @@ data:
   {{ if eq .Values.favorite.drink "coffee" }}
   sugar: "true"
   {{ end }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  myvalue: "Hello World"
+  {{- with .Values.favorite }}
+  drink: {{ .drink | default "tea" | quote }}
+  food: {{ .food | upper | quote }}
+  release: {{ $.Release.Name }}
+  {{- end }}
