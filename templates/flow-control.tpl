@@ -31,3 +31,14 @@ data:
   food: {{ .food | upper | quote }}
   release: {{ $.Release.Name }}
   {{- end }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap-2
+data:
+  myvalue: "Hello World"
+  toppings: |-
+    {{- range .Values.pizzaToppings }}
+    - {{ . | title | quote }}
+    {{- end }}

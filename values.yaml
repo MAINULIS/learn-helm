@@ -6,3 +6,10 @@ favorite:
 
 configmap:
   enabled: false
+
+pizzaToppings:
+  - mushrooms
+  - cheese
+  - peppers
+  - onions
+  - pineapple
