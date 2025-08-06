@@ -50,6 +50,17 @@ kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-configmap-3
 data:
+  toppings: |-
+  {{- range $key, $value := .Values.favorite }}
+  {{ $key | title | quote }}= {{ $value }}
+  {{- end }}
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap-4
+data:
   myvalue: "Hello World"
   {{- $relname := .Release.Name -}} ## here we are declaring variable
   {{- with .Values.favorite }}
